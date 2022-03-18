@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: mydeploy
+spec:
+   replicas: 3
+   selector:
+    matchLabels:
+      app: dev
+   template:
+     metadata:
+        name: mynginx23
+        labels:
+          app: dev
+     spec:
+        containers:
+         - image: vinodhdocker123/nginxdemo:1
+           imagePullPolicy: Always
+           name: mynginx23
+
